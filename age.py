@@ -21,6 +21,8 @@ def calculate_age(birthday):
 
     return age 
 
+
+
 ''' Seperate function for getting the birthday input from the user, 
     with error handling for incorrect YYYY-MM-DD formats.
 '''
@@ -37,11 +39,12 @@ def get_birthday():
         except ValueError: 
             print('Invalid format. Please enter the date in the format YYYY-MM-DD')
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     print('')
     print('')
 
     print('Welcome to the SigmaLabs age calculator!')
+    print('')
 
     birthday = get_birthday()
     age = calculate_age(birthday)
