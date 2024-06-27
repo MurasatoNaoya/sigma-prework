@@ -1,9 +1,11 @@
 import datetime
 
-def  calculate_age(birthday): 
-    if isinstance(birthday, str): 
-        birthday = datetime.datetime.strptime(birthday, '%Y-%m-%d')
-    
+'''
+    Function to calculate the age of a person given their birthday and the current date.
+'''
+def calculate_age(birthday): 
+    # 
+    birthday = datetime.datetime.strptime(birthday, '%Y-%m-%d')
 
     # Get the current date dynamically. 
     current = datetime.datetime.now()
@@ -14,12 +16,14 @@ def  calculate_age(birthday):
     # The current age calculation already accounts for the person's birthday this year, 
     # so we need to check for whether the person's birthday this current year has 
     # truly happened yet or not. 
-
     if (birthday.month, birthday.day) > (current.month, current.day): 
-        age -= 1
+        age -= 1 # Decrement the age by 1 if the birthday hasn't happened yet this year.
 
     return age 
 
+''' Seperate function for getting the birthday input from the user, 
+    with error handling for incorrect YYYY-MM-DD formats.
+'''
 def get_birthday():
     while True: 
         try: 
@@ -33,13 +37,14 @@ def get_birthday():
         except ValueError: 
             print('Invalid format. Please enter the date in the format YYYY-MM-DD')
 
-print('')
-print('')
+if __name__ == '__main__':
+    print('')
+    print('')
 
-print('Welcome to the SigmaLabs age calculator!')
+    print('Welcome to the SigmaLabs age calculator!')
 
-birthday = get_birthday()
-age = calculate_age(birthday)
+    birthday = get_birthday()
+    age = calculate_age(birthday)
 
-print('')
-print(f'You are {age} years old.')
+    print('')
+    print(f'You are {age} years old.')
