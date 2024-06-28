@@ -23,7 +23,8 @@ def calculate_age(birthday):
 
 
 
-''' Seperate function for getting the birthday input from the user, 
+''' 
+Seperate function for getting the birthday input from the user, 
     with error handling for incorrect YYYY-MM-DD formats.
 '''
 def get_birthday():
